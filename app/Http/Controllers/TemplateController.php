@@ -10,4 +10,29 @@ class TemplateController extends Controller
     {
         return view('shop.index');
     }
+
+    public function show( )
+    {
+        return view('shop.products');
+    }
+
+    public function details()
+    {
+        return view('shop.product-details');
+    }
+
+    public function cart()
+    {
+        return view('shop.cart');
+    }
+
+    public function about()
+    {
+        return view('shop.about-us');
+    }
+
+    public function contact()
+    {
+        return view('shop.contact');
+    }
 }
