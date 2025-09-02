@@ -91,39 +91,27 @@
 						<img src="{{ asset('images/icons/logo-01.png') }}" alt="IMG-LOGO">
 					</a>
 
-					<!-- Menu desktop -->
-					<div class="menu-desktop">
-						<ul class="main-menu">
-							<li class="active-menu">
-								<a href="index.html">Home</a>
-								<ul class="sub-menu">
-									<li><a href="{{ url('index.html') }}">Homepage 1</a></li>
-									<li><a href="{{ url('home-02.html') }}">Homepage 2</a></li>
-									<li><a href="{{ url('home-03.html') }}">Homepage 3</a></li>
-								</ul>
-							</li>
+                    <!-- Menu desktop -->
+                    <div class="menu-desktop">
+                        <ul class="main-menu">
+                            <li class="active-menu">
+                                <a href="{{ url('/index') }}">Home</a>
+                            </li>
 
-							<li>
-								<a href="{{ url('product.html') }}">Shop</a>
-							</li>
+                            <li>
+                                <a href="{{ url('/products') }}">Shop</a>
+                            </li>
 
-							<li class="label1" data-label1="hot">
-								<a href="{{ url('shoping-cart.html') }}">Features</a>
-							</li>
+                            <li>
+                                <a href="{{ url('/about-us') }}">About</a>
+                            </li>
 
-							<li>
-								<a href="{{ url('blog.html') }}">Blog</a>
-							</li>
+                            <li>
+                                <a href="{{ url('/contact') }}">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
 
-							<li>
-								<a href="{{ url('about.html') }}">About</a>
-							</li>
-
-							<li>
-								<a href="{{ url('contact.html') }}">Contact</a>
-							</li>
-						</ul>
-					</div>	
 
 					<!-- Icon header -->
 					<div class="wrap-icon-header flex-w flex-r-m">
@@ -206,35 +194,21 @@
 
 			<ul class="main-menu-m">
 				<li>
-					<a href="{{ url('index.html') }}">Home</a>
-					<ul class="sub-menu-m">
-						<li><a href="{{ url('index.html') }}">Homepage 1</a></li>
-						<li><a href="{{ url('home-02.html') }}">Homepage 2</a></li>
-						<li><a href="{{ url('home-03.html') }}">Homepage 3</a></li>
-					</ul>
-					<span class="arrow-main-menu-m">
-						<i class="fa fa-angle-right" aria-hidden="true"></i>
-					</span>
+					<a href="{{ url('index.blade.php') }}">Home</a>
 				</li>
 
 				<li>
-					<a href="{{ url('product.html') }}">Shop</a>
+					<a href="{{ url('products.blade.php') }}">Shop</a>
 				</li>
 
+                
 				<li>
-					<a href="{{ url('shoping-cart.html') }}" class="label1 rs1" data-label1="hot">Features</a>
+                    <a href="{{ url('about.blade.php') }}">About Us</a>
 				</li>
+    
 
 				<li>
-					<a href="{{ url('blog.html') }}">Blog</a>
-				</li>
-
-				<li>
-					<a href="{{ url('about.html') }}">About</a>
-				</li>
-
-				<li>
-					<a href="{{ url('contact.html') }}">Contact</a>
+					<a href="{{ url('contact.blade.php') }}">Contact</a>
 				</li>
 			</ul>
 		</div>
@@ -257,9 +231,165 @@
 	</header>
 
 
-    <main>
-        @yield('content')
+    <main class="py-5 px-3 top-10">
+        <div class="container m-5">
+            @yield('content')
+        </div>
     </main>
+
+
+    <!-- Footer -->
+	<footer class="bg3 p-t-75 p-b-32">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6 col-lg-3 p-b-50">
+					<h4 class="stext-301 cl0 p-b-30">
+						Categories
+					</h4>
+
+					<ul>
+						<li class="p-b-10">
+							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+								Women
+							</a>
+						</li>
+
+						<li class="p-b-10">
+							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+								Men
+							</a>
+						</li>
+
+						<li class="p-b-10">
+							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+								Shoes
+							</a>
+						</li>
+
+						<li class="p-b-10">
+							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+								Watches
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="col-sm-6 col-lg-3 p-b-50">
+					<h4 class="stext-301 cl0 p-b-30">
+						Help
+					</h4>
+
+					<ul>
+						<li class="p-b-10">
+							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+								Track Order
+							</a>
+						</li>
+
+						<li class="p-b-10">
+							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+								Returns 
+							</a>
+						</li>
+
+						<li class="p-b-10">
+							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+								Shipping
+							</a>
+						</li>
+
+						<li class="p-b-10">
+							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+								FAQs
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="col-sm-6 col-lg-3 p-b-50">
+					<h4 class="stext-301 cl0 p-b-30">
+						GET IN TOUCH
+					</h4>
+
+					<p class="stext-107 cl7 size-201">
+						Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1) 96 716 6879
+					</p>
+
+					<div class="p-t-27">
+						<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+							<i class="fa fa-facebook"></i>
+						</a>
+
+						<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+							<i class="fa fa-instagram"></i>
+						</a>
+
+						<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+							<i class="fa fa-pinterest-p"></i>
+						</a>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-lg-3 p-b-50">
+					<h4 class="stext-301 cl0 p-b-30">
+						Newsletter
+					</h4>
+
+					<form>
+						<div class="wrap-input1 w-full p-b-4">
+							<input class="input1 bg-none plh1 stext-107 cl7" type="text" name="email" placeholder="email@example.com">
+							<div class="focus-input1 trans-04"></div>
+						</div>
+
+						<div class="p-t-18">
+							<button class="flex-c-m stext-101 cl0 size-103 bg1 bor1 hov-btn2 p-lr-15 trans-04">
+								Subscribe
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<div class="p-t-40">
+				<div class="flex-c-m flex-w p-b-18">
+					<a href="#" class="m-all-1">
+						<img src="images/icons/icon-pay-01.png" alt="ICON-PAY">
+					</a>
+
+					<a href="#" class="m-all-1">
+						<img src="images/icons/icon-pay-02.png" alt="ICON-PAY">
+					</a>
+
+					<a href="#" class="m-all-1">
+						<img src="images/icons/icon-pay-03.png" alt="ICON-PAY">
+					</a>
+
+					<a href="#" class="m-all-1">
+						<img src="images/icons/icon-pay-04.png" alt="ICON-PAY">
+					</a>
+
+					<a href="#" class="m-all-1">
+						<img src="images/icons/icon-pay-05.png" alt="ICON-PAY">
+					</a>
+				</div>
+
+				<p class="stext-107 cl6 txt-center">
+					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | developed by <a href="https://737174852.com" target="_blank">Moreeh</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+
+				</p>
+			</div>
+		</div>
+	</footer>
+
+
+	<!-- Back to top -->
+	<div class="btn-back-to-top" id="myBtn">
+		<span class="symbol-btn-back-to-top">
+			<i class="zmdi zmdi-chevron-up"></i>
+		</span>
+	</div>
 
 
     <script src="{{ asset('js/main.js') }}"></script>
