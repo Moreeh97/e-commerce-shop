@@ -1,6 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ShopController;
+use App\Http\Controllers\TemplateController;
 
-Route::get('/', [ShopController::class, 'index']);
+Route::get('/', [TemplateController::class, 'index']);
