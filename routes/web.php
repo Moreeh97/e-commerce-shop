@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TemplateController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\StoreController;
+use App\Http\Controllers\ContactController;
 
 
 Route::get('/', [TemplateController::class, 'index']);
@@ -12,3 +13,7 @@ Route::get('/product/{id}', [StoreController::class, 'productDetails'])->name('p
 Route::get('/cart', [StoreController::class, 'cart'])->name('cart');
 Route::get('/contact', [StoreController::class, 'contact'])->name('contact');
 Route::get('/about-us', [StoreController::class, 'about'])->name('about-us');
+
+
+Route::get('/contact', [ContactController::class,'showForm'])->name('contact.form');
+Route::post('/contact', [ContactController::class,'submit'])->name('contact.submit');
