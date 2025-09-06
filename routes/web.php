@@ -12,3 +12,6 @@ Route::get('/product/{id}', [StoreController::class, 'productDetails'])->name('p
 Route::get('/cart', [StoreController::class, 'cart'])->name('cart');
 Route::get('/contact', [StoreController::class, 'contact'])->name('contact');
 Route::get('/about-us', [StoreController::class, 'about'])->name('about-us');
+
+
+Route::resource('products', ProductController::class);
