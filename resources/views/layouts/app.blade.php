@@ -1,78 +1,36 @@
-
 <!DOCTYPE html>
-<html lang="ar">
-<head>
-    <meta charset="UTF-8">
-    <title>@yield('title')</title>
-<!-- Favicon -->
-<link rel="icon" type="image/png" href="{{ asset('images/icons/favicon.png') }}"/>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
-<!-- Bootstrap -->
-<link rel="stylesheet" type="text/css" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
+        <title>{{ config('app.name', 'Laravel') }}</title>
 
-<!-- Font Awesome -->
-<link rel="stylesheet" type="text/css" href="{{ asset('fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.bunny.net">
+        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
-<!-- Material Design Iconic Font -->
-<link rel="stylesheet" type="text/css" href="{{ asset('fonts/iconic/css/material-design-iconic-font.min.css') }}">
+        <!-- Scripts -->
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
+    </head>
+    <body class="font-sans antialiased">
+        <div class="min-h-screen bg-gray-100">
+            @include('layouts.navigation')
 
-<!-- Linearicons -->
-<link rel="stylesheet" type="text/css" href="{{ asset('fonts/linearicons-v1.0.0/icon-font.min.css') }}">
+            <!-- Page Heading -->
+            @isset($header)
+                <header class="bg-white shadow">
+                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                        {{ $header }}
+                    </div>
+                </header>
+            @endisset
 
-<!-- Animate -->
-<link rel="stylesheet" type="text/css" href="{{ asset('vendor/animate/animate.css') }}">
-
-<!-- Hamburgers -->
-<link rel="stylesheet" type="text/css" href="{{ asset('vendor/css-hamburgers/hamburgers.min.css') }}">
-
-<!-- Animsition -->
-<link rel="stylesheet" type="text/css" href="{{ asset('vendor/animsition/css/animsition.min.css') }}">
-
-<!-- Select2 -->
-<link rel="stylesheet" type="text/css" href="{{ asset('vendor/select2/select2.min.css') }}">
-
-<!-- Daterangepicker -->
-<link rel="stylesheet" type="text/css" href="{{ asset('vendor/daterangepicker/daterangepicker.css') }}">
-
-<!-- Slick -->
-<link rel="stylesheet" type="text/css" href="{{ asset('vendor/slick/slick.css') }}">
-
-<!-- Magnific Popup -->
-<link rel="stylesheet" type="text/css" href="{{ asset('vendor/MagnificPopup/magnific-popup.css') }}">
-
-<!-- Perfect Scrollbar -->
-<link rel="stylesheet" type="text/css" href="{{ asset('vendor/perfect-scrollbar/perfect-scrollbar.css') }}">
-
-<!-- Util & Main CSS -->
-<link rel="stylesheet" type="text/css" href="{{ asset('css/util.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}">
-
-    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/util.css') }}">
-    @yield('styles')
-</head>
-<body>
-
-@include('partials.header')
-
-    <main class="py-5 px-3 top-10">
-        <div class="container m-5">
-            @yield('content')
+            <!-- Page Content -->
+            <main>
+                {{ $slot }}
+            </main>
         </div>
-    </main>
-
-
-@include('partials.footer')
-
-
-	<!-- Back to top -->
-	<div class="btn-back-to-top" id="myBtn">
-		<span class="symbol-btn-back-to-top">
-			<i class="zmdi zmdi-chevron-up"></i>
-		</span>
-	</div>
-
-
-    <script src="{{ asset('js/main.js') }}"></script>
-</body>
+    </body>
 </html>
