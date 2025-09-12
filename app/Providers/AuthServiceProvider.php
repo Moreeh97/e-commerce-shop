@@ -21,6 +21,7 @@ class AuthServiceProvider extends ServiceProvider
             if ($user->is_admin) {
                 return true;
             }
+
             Log::warning('Unauthorized admin access attempt', [
                 'user_id' => $user->id ?? null,
                 'email' => $user->email ?? null,
